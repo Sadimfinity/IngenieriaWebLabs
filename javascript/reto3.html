@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 3</title>
+    <script>
+        function verifyPangrama(){
+            let text = "asdfghjklñqwertyuiopzxcvbnmñ"
+            let result = new Set(text.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
+            console.log(result);
+            document.getElementById("demo").innerHTML = result;
+            return result;
+        }
+    </script>
+</head>
+<body>
+    <label>Enter text: </label>
+    <input type="text" name="text"></input>
+    <p id="demo" onclick="verifyPangrama()">Click me to change my HTML content (innerHTML).</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 4</title>
+    <script>
+        function verifyLeapYear(){
+            let year = 2020;
+            if(year%4 === 0){
+                if(year%100 === 0){
+                    if(year%400 === 0){
+                        console.log(true);
+                        return true;
+                    }
+                    console.log(false);
+                    return false;
+                }
+                console.log(true);
+                return true;
+            }
+            console.log(false);
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="verifyLeapYear()"> Verificar año bisiesto </button>
+    
+</body>
+</html>
