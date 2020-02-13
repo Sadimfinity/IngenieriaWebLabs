@@ -6,25 +6,23 @@
     <title>Reto 2</title>
     <script>
         function drawRectangle(){
-            let height = document.sides["height"];
-            let large = document.sides["large"];
+            let height = document.getElementById("height").value;
+            let large = document.getElementById("large").value;
             let canvas = document.getElementById("myCanvas");
-            let static = document.getElementById("myDiv");
-            static.style.display = "block";
             let ctx = canvas.getContext("2d");
-            ctx.fillRect(0, 0, 100, 100);
+            ctx.fillRect(0, 0, height, large);
             ctx.stroke();
         }
     </script>
 </head>
 <body>
-    <form name="sides" onsubmit="return drawRectangle()">
-        <p> Ingrese la altura del rectángulo </p><input name="height" type="text"></input>
-        <p> Ingrese el ancho del rectángulo </p><input name="large" type="text"></input>
-        <input type="submit"></input>
+<form name="sides" onsubmit="return drawRectangle()">
+    <p> Ingrese la altura del rectángulo </p><input type="text" name="height" id="height"></input>
+    <p> Ingrese el ancho del rectángulo </p><input type="text" name="large" id="large"></input>
 </form>
+<input type="submit" onclick="drawRectangle();"><br/>
 <div id="myDiv">
-    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;"></canvas>
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #c3c3c3;"></canvas>
 </div>
 </body>
 </html>

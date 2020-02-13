@@ -6,26 +6,32 @@
     <title>Reto 4</title>
     <script>
         function verifyLeapYear(){
-            let year = 2020;
+            let year = document.getElementById("text").value;
             if(year%4 === 0){
                 if(year%100 === 0){
                     if(year%400 === 0){
-                        console.log(true);
+                        document.getElementById('display').innerHTML =  'Sí'
                         return true;
                     }
-                    console.log(false);
+                    document.getElementById('display').innerHTML =  'No'
                     return false;
                 }
-                console.log(true);
+                document.getElementById('display').innerHTML =  'Sí'
                 return true;
             }
-            console.log(false);
+            document.getElementById('display').innerHTML =  'No'
             return false;
         }
+
     </script>
 </head>
 <body>
-    <button onclick="verifyLeapYear()"> Verificar año bisiesto </button>
-    
+    <label>Ingrese un año para verificar si es bisiesto: </label>
+    <input type="text" id="text"></input>
+    <input type="submit" onclick="verifyLeapYear()"></input>
+    <br>
+    <br>
+    <label>¿Es año?</label>
+    <p><span id='display'></span></p>
 </body>
 </html>

@@ -7,16 +7,20 @@
     <script>
         function verifyPangrama(){
             let text = "asdfghjklñqwertyuiopzxcvbnmñ"
-            let result = new Set(text.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
+            let texto = document.getElementById("text").value
+            let result = new Set(texto.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
             console.log(result);
-            document.getElementById("demo").innerHTML = result;
-            return result;
+            document.getElementById('display').innerHTML = result ? 'Sí' : 'No'
         }
     </script>
 </head>
 <body>
-    <label>Enter text: </label>
-    <input type="text" name="text"></input>
-    <p id="demo" onclick="verifyPangrama()">Click me to change my HTML content (innerHTML).</p>
+    <label>Ingrese una frase para verificar si es pangrama: </label>
+    <input type="text" id="text"></input>
+    <input type="submit" onclick="verifyPangrama()"></input>
+    <br>
+    <br>
+    <label>¿Es pangrama?</label>
+    <p><span id='display'></span></p>
 </body>
 </html>
