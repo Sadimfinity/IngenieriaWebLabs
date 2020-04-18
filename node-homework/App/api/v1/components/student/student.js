@@ -1,5 +1,5 @@
 /**
- *  Import quote model 
+ *  Import student model 
  */
 let studentModel = require('./student.model');
 
@@ -20,20 +20,29 @@ async function saveStudent(student){
 
 async function calculateAverageScore(){
     const students = await getStudentsDAO();
-    let average = 0;
-    students.forEach(student => average = average + student.score);
-    average = average / students.length;
-    return average;
+    if(students.length > 0){
+        let average = 0;
+        students.forEach(student => average = average + student.score);
+        average = average / students.length;
+        return average;
+    } else {
+        return 0
+    }
+
 }
 
 async function updateScholarship(){
     const students = await getStudentsDAO();
-    const scholarshipHolders = students.filter(student => student.score >= 4.5 && student.stratum <= 3)
-    await scholarshipHolders.forEach(async student => {
-        await updateStudentDAO(student.id, {scholarship: true});
-        student.scholarship = true;
-    })
-    return scholarshipHolders
+    if(students.length > 0){
+        const scholarshipHolders = students.filter(student => student.score >= 4.5 && student.stratum <= 3)
+        await scholarshipHolders.forEach(async student => {
+            await updateStudentDAO(student.id, {scholarship: true});
+            student.scholarship = true;
+        })
+        return scholarshipHolders
+    } else {
+        return false
+    }
 }
 
 

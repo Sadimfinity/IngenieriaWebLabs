@@ -17,17 +17,11 @@ const { getStudent,
 
 let router = new Router();
 
-/**
- * Endpoint of the generate-changing-life-quote GET method
- */
 router.route('/students/:id')
     .get((req,res) => {
         getStudent(req, res);
     })
 
-/**
- * Endpoint of the generate-changing-life-quote GET method
- */
 router.route('/students/')
     .get((req,res) => {
         getStudents(req, res);
@@ -53,7 +47,7 @@ router.route('/average/students/')
         getAverageScore(req, res);
     }) 
 
-router.route('/scholarship/students//')
+router.route('/scholarship/students/')
     .patch((req,res) => {
         applyToScholarship(req, res);
     }) 

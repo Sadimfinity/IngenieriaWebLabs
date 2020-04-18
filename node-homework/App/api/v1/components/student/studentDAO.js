@@ -3,10 +3,6 @@
  */
 let studentModel = require('./student.model');
 
-/**
- * Query the mongo database using the parameter id to delete a record
- * @param {String} id The id of some record saved on database
- */
 function deleteStudentDAO(id) {
     return new Promise((resolve, reject) => {
         studentModel.findByIdAndRemove({
@@ -21,10 +17,6 @@ function deleteStudentDAO(id) {
     });
 }
 
-/**
- * Query the mongo database using the parameter id to bring a record
- * @param {String} id The id of some record saved on database
- */
 function getStudentDAO(id) {
     return new Promise((resolve, reject) => {
         studentModel.findOne({
@@ -39,10 +31,6 @@ function getStudentDAO(id) {
     })
 }
 
-/**
- * Query the mongo database using the parameter id to bring a record
- * @param {String} id The id of some record saved on database
- */
 function getStudentsDAO() {
     return new Promise((resolve, reject) => {
         studentModel.find({},

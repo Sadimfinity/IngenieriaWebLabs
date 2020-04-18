@@ -19,12 +19,6 @@ const {
     deleteStudentDAO
 } = require('./studentDAO');
 
-/**
- * This method get a record of DB and return HTTP 200 status. In case of error, returns and HTTP 404 or 400 status 
- * @param {*} req Request parameter of the HTTP Method
- * @param {*} res Response parameter of the HTTP Method
- */
-
 async function getStudent(req, res) {
     let idStudent = req.params.id;
     if (idIsCorrect(idStudent)) {
@@ -44,12 +38,6 @@ async function getStudent(req, res) {
     }
 }
 
-
-/**
- * This method send the generated quote and image in HTTP 200 status, in case of error, returns and HTTP 500 status 
- * @param {*} req Request parameter of the HTTP Method
- * @param {*} res Response parameter of the HTTP Method
- */
 async function getStudents(req, res) {
     try {
         let allStudents = await getStudentsDAO();
@@ -72,22 +60,20 @@ async function updateStudent(req, res) {
             return res.status(httpStatus.NOT_FOUND).send({ message: 'El registro no existe en la base de datos.' });
         }
     } else {
-        return res.status(httpStatus.BAD_REQUEST).send({ message: 'Ingrese un id correcto' });
+        return res.status(httpStatus.BAD_REQUEST).send({ message: 'Ingrese un id correcto.' });
     }
 }
 
 async function createStudent(req, res) {
         const newStudent = req.body
-        response = await saveStudent(newStudent);
-        console.log(response)
-        return res.send(response).status(httpStatus.OK);
-}
+        if(req.body){
+            response = await saveStudent(newStudent);
+            return res.send(response).status(httpStatus.OK);
+        } else {
+            return res.status(httpStatus.BAD_REQUEST).send({ message: 'Ingrese los parámetros necesarios para la creación del estudiante.' });
+        }
 
-/**
- * This method delete a record of DB and return HTTP 200 status. In case of error, returns and HTTP 404 or 400 status 
- * @param {*} req Request parameter of the HTTP Method
- * @param {*} res Response parameter of the HTTP Method
- */
+}
 
 async function deleteStudent(req, res) {
     let idStudent = req.params.id;
@@ -108,28 +94,32 @@ async function deleteStudent(req, res) {
     }
 }
 
-/**
- * This method send the generated quote and image in HTTP 200 status, in case of error, returns and HTTP 500 status 
- * @param {*} req Request parameter of the HTTP Method
- * @param {*} res Response parameter of the HTTP Method
- */
 async function getAverageScore(req, res) {
     try {
         let averageScore = await calculateAverageScore();
-        let score = {
-            averageScore: averageScore
+        if(averageScore != 0){
+            let score = {
+                averageScore: averageScore
+            }
+            return res.status(httpStatus.OK).send(score);
+        } else {
+            return res.status(httpStatus.NO_CONTENT).send({ message: 'No se encontraron registros en la base de datos.'});
         }
-        return res.status(httpStatus.OK).send(score);
+
     }
     catch (err) {
-        return res.status(httpStatus.INTERNAL_SERVER_ERROR)
+        return res.status(httpStatus.INTERNAL_SERVER_ERROR);
     }
 }
 
 async function applyToScholarship(req, res) {
         try {
-            scholarshipHolders = await updateScholarship();
-            return res.send(scholarshipHolders).status(httpStatus.OK);
+            const scholarshipHolders = await updateScholarship();
+            if(scholarshipHolders){
+                return res.send(scholarshipHolders).status(httpStatus.OK);
+            } else {
+                return res.status(httpStatus.NO_CONTENT).send({ message: 'No se encontraron registros en la base de datos.'});
+            }
         }
         catch (err) {
             return res.status(httpStatus.NOT_FOUND).send({ message: 'El registro no existe en la base de datos.' });
