@@ -10,7 +10,7 @@ let student = require('./components/student/student.route');
 
 let router = new Router();
 
-router.use('/students/', student);
+router.use('/', student);
 
 module.exports = router;
 

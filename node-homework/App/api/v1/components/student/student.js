@@ -3,6 +3,8 @@
  */
 let studentModel = require('./student.model');
 
+const { getStudentsDAO, updateStudentDAO } = require('./studentDAO')
+
 async function saveStudent(student){
     const newStudent = {
         name: student.name,
@@ -16,6 +18,27 @@ async function saveStudent(student){
     return studentSaved;
 }
 
+async function calculateAverageScore(){
+    const students = await getStudentsDAO();
+    let average = 0;
+    students.forEach(student => average = average + student.score);
+    average = average / students.length;
+    return average;
+}
+
+async function updateScholarship(){
+    const students = await getStudentsDAO();
+    const scholarshipHolders = students.filter(student => student.score >= 4.5 && student.stratum <= 3)
+    await scholarshipHolders.forEach(async student => {
+        await updateStudentDAO(student.id, {scholarship: true});
+        student.scholarship = true;
+    })
+    return scholarshipHolders
+}
 
 
-module.exports = { saveStudent };
+module.exports = { 
+    saveStudent,
+    calculateAverageScore,
+    updateScholarship 
+};
