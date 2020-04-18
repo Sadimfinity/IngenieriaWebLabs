@@ -9,7 +9,7 @@ const cors = require('cors');
 /**
  * Routes to the different resources
  */
-const routes = require('./App/routes');
+const routes = require('./App/api/v1/routes');
 
 /**
  * Importing configuration variables

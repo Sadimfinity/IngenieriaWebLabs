@@ -33,7 +33,7 @@ router.route('/')
         getStudents(req, res);
     })
 
-router.route('/')
+router.route('/:id')
     .put((req,res) => {
         updateStudent(req, res);
     })
@@ -43,7 +43,7 @@ router.route('/')
         createStudent(req, res);
     })
 
-router.route('/')
+router.route('/:id')
     .delete((req,res) => {
         deleteStudent(req, res);
     }) 

@@ -7,7 +7,7 @@ let studentModel = require('./student.model');
  * Query the mongo database using the parameter id to delete a record
  * @param {String} id The id of some record saved on database
  */
-function deleteStudent(id) {
+function deleteStudentDAO(id) {
     return new Promise((resolve, reject) => {
         studentModel.findByIdAndRemove({
             "_id": id
@@ -25,7 +25,7 @@ function deleteStudent(id) {
  * Query the mongo database using the parameter id to bring a record
  * @param {String} id The id of some record saved on database
  */
-function getStudent(id) {
+function getStudentDAO(id) {
     return new Promise((resolve, reject) => {
         studentModel.findOne({
             "_id": id
@@ -43,7 +43,7 @@ function getStudent(id) {
  * Query the mongo database using the parameter id to bring a record
  * @param {String} id The id of some record saved on database
  */
-function getStudents() {
+function getStudentsDAO() {
     return new Promise((resolve, reject) => {
         studentModel.find({},
             function (err, doc) {
@@ -55,16 +55,17 @@ function getStudents() {
     })
 }
 
-function updateStudent(id, updatedStudent){
+function updateStudentDAO(id, updatedStudent) {
     return new Promise((resolve, reject) => {
-        studentModel.findByIdAndUpdate({ "_id": id}, updatedStudent,
-        function(err, doc){
-            if (err){
-                reject(err);
-            }
-            resolve(doc);
-        })
+        studentModel.findByIdAndUpdate({ "_id": id },
+            { useFindAndModify: false }, updatedStudent,
+            function (err, doc) {
+                if (err) {
+                    reject(err);
+                }
+                resolve(doc);
+            })
     })
 }
 
-module.exports = { getStudent, getStudents, deleteStudent, updateStudent }
+module.exports = { getStudentDAO, getStudentsDAO, deleteStudentDAO, updateStudentDAO }

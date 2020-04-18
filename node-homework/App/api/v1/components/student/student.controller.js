@@ -7,16 +7,16 @@ const httpStatus = require('http-status');
  *  Imported methods 
  */
 const {
-    createStudent,
-    getAverageScore,
-    applyToScholarship
+    saveStudent,
+    calculateAverageScore,
+    updateScholarship
 } = require('./student');
 
 const {
-    getStudent,
-    getStudents,
-    updateStudent,
-    deleteStudent
+    getStudentDAO,
+    getStudentsDAO,
+    updateStudentDAO,
+    deleteStudentDAO
 } = require('./studentDAO');
 
 /**
@@ -29,7 +29,7 @@ async function getStudent(req, res) {
     let idStudent = req.params.id;
     if (idIsCorrect(idStudent)) {
         try {
-            let newStudent = await getStudent(idStudent);
+            let newStudent = await getStudentDAO(idStudent);
             if (newStudent) {
                 return res.status(httpStatus.OK).send(newStudent);
             } else {
@@ -52,7 +52,7 @@ async function getStudent(req, res) {
  */
 async function getStudents(req, res) {
     try {
-        let allStudents = await getStudents();
+        let allStudents = await getStudentsDAO();
         return res.status(httpStatus.OK).send(allStudents);
     }
     catch (err) {
@@ -65,8 +65,8 @@ async function updateStudent(req, res) {
     if (idIsCorrect(idStudent)) {
         try {
             let updatedObject = req.body;
-            response = await updateStudentDAO(id, updatedObject);
-            return res.sendStatus(httpStatus.OK);
+            response = await updateStudentDAO(idStudent, updatedObject);
+            return res.send(response).status(httpStatus.OK);
         }
         catch (err) {
             return res.status(httpStatus.NOT_FOUND).send({ message: 'El registro no existe en la base de datos.' });
@@ -76,15 +76,11 @@ async function updateStudent(req, res) {
     }
 }
 
-function createStudent(req, res) {
-    try {
+async function createStudent(req, res) {
         const newStudent = req.body
-        response = createStudentDAO(newStudent);
-        return res.sendStatus(httpStatus.OK);
-    }
-    catch (err) {
-        return res.status(httpStatus.NOT_FOUND).send({ message: 'El registro no existe en la base de datos.' });
-    }
+        response = await saveStudent(newStudent);
+        console.log(response)
+        return res.send(response).status(httpStatus.OK);
 }
 
 /**
@@ -97,7 +93,7 @@ async function deleteStudent(req, res) {
     let idStudent = req.params.id;
     if (idIsCorrect(idStudent)) {
         try {
-            let deletedStudent = await deleteStudent(idStudent);
+            let deletedStudent = await deleteStudentDAO(idStudent);
             if (deletedStudent) {
                 return res.status(httpStatus.OK).send(deletedStudent);
             } else {
@@ -119,7 +115,7 @@ async function deleteStudent(req, res) {
  */
 async function getAverageScore(req, res) {
     try {
-        let averageScore = await getAverageScore();
+        let averageScore = await calculateAverageScore();
         let score = {
             averageScore: averageScore
         }
@@ -132,8 +128,8 @@ async function getAverageScore(req, res) {
 
 async function applyToScholarship(req, res) {
         try {
-            scholarshipHolders = await applyToScholarship();
-            return res.send(scholarshipHolders).sendStatus(httpStatus.OK);
+            scholarshipHolders = await updateScholarship();
+            return res.send(scholarshipHolders).status(httpStatus.OK);
         }
         catch (err) {
             return res.status(httpStatus.NOT_FOUND).send({ message: 'El registro no existe en la base de datos.' });

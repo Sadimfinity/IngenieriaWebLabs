@@ -6,7 +6,7 @@ const Router = require('express').Router;
 /**
  * Import the different routes of the features
  */
-let student = require('./features/quote/route');
+let student = require('./components/student/student.route');
 
 let router = new Router();
 
