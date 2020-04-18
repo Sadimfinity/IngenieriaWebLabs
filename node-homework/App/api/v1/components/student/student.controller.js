@@ -67,8 +67,12 @@ async function updateStudent(req, res) {
 async function createStudent(req, res) {
         const newStudent = req.body
         if(req.body){
-            response = await saveStudent(newStudent);
-            return res.send(response).status(httpStatus.OK);
+            try{
+                response = await saveStudent(newStudent);
+                return res.send(response).status(httpStatus.OK);
+            } catch {
+                res.status(httpStatus.BAD_REQUEST).send({ message: 'Ingrese los parámetros necesarios para la creación del estudiante.' }); 
+            }
         } else {
             return res.status(httpStatus.BAD_REQUEST).send({ message: 'Ingrese los parámetros necesarios para la creación del estudiante.' });
         }
