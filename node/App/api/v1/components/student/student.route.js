@@ -6,32 +6,56 @@ const Router = require('express').Router;
 /**
  *  Imported methods of controller 
  */
-const { generateImageByQuote, deleteQuoteById, getQuoteById } = require('./controller');
+const { getStudent, 
+        getStudents, 
+        updateStudent, 
+        createStudent, 
+        deleteStudent, 
+        getAverageScore, 
+        applyToScholarship} = require('./student.controller')
+
 
 let router = new Router();
 
 /**
  * Endpoint of the generate-changing-life-quote GET method
  */
-router.route('/generate-changing-life-quote')
+router.route('/:id')
     .get((req,res) => {
-        generateImageByQuote(req, res);
+        getStudent(req, res);
     })
 
 /**
- * Endpoint of the GET record method
+ * Endpoint of the generate-changing-life-quote GET method
  */
-router.route('/get-record/:id')
+router.route('/')
     .get((req,res) => {
-        getQuoteById(req, res);
+        getStudents(req, res);
     })
 
-/**
- * Endpoint of the DELETE record method
- */
-router.route('/delete-record/:id')
+router.route('/')
+    .put((req,res) => {
+        updateStudent(req, res);
+    })
+
+router.route('/')
+    .post((req,res) => {
+        createStudent(req, res);
+    })
+
+router.route('/')
     .delete((req,res) => {
-        deleteQuoteById(req, res);
-    })
+        deleteStudent(req, res);
+    }) 
+
+router.route('/average/')
+    .get((req,res) => {
+        getAverageScore(req, res);
+    }) 
+
+router.route('/scholarship/')
+    .patch((req,res) => {
+        applyToScholarship(req, res);
+    }) 
 
 module.exports = router;

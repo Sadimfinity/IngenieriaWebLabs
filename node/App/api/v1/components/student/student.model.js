@@ -7,14 +7,39 @@ const mongoose = require('mongoose');
 /**
  * Creates the model of the records saved in database
  */
-let quote = {
-    quote: {
+const student = {
+    name: {
         type: String,
         required: true
     },
-    image: {
+    identification: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: false
+    },
+    score: {
+        type: Number,
+        min: 0,
+        max: 5,
+        required: true
+    },
+    stratum: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 6,
+        validate: {
+            validator: Number.isInteger,
+            message: '{VALUE} is not an integer value'
+        }
+    },
+    scholarship: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 }
 
@@ -22,7 +47,7 @@ let quote = {
  * Create and save the schema of the records that will being saved on DB
  */
 
-let quoteSchema = new mongoose.Schema(quote);
-let quoteModel = mongoose.model('Quote', quoteSchema);
+let studentSchema = new mongoose.Schema(student);
+let studentModel = mongoose.model('Quote', studentSchema);
 
-module.exports = quoteModel;
+module.exports = studentModel;
