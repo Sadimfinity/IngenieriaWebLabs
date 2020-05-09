@@ -53,9 +53,14 @@ export class RomanNumbersService {
         roman_number = roman_numbers.get(10)
         break;
       }
-      case (10 < number && number < 20): {
-        const result = this.convertNumber(number%10)
-        roman_number = roman_numbers.get(10).concat(result)
+      case (10 < number && number < 100): {
+        for (let index = 0; index < Math.floor(number/10); index++) {
+          roman_number = roman_number.concat(roman_numbers.get(10))
+        }
+        let aux = roman_number;
+        let result = this.convertNumber(number%10);
+        roman_number = aux;
+        roman_number = roman_number.concat(result);
       }
     }
     return roman_number;
