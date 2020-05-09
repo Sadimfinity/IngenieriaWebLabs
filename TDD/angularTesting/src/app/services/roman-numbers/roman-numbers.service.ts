@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
-
-let roman_number: string;
+let module_result: string;
 let roman_numbers = new Map([
  [ 1, 'I' ],
  [ 5, 'V' ],
  [ 10, 'X' ],
- [ 20, 'XX' ],
- [ 30, 'XXX' ],
- [ 40, 'XL' ],
  [ 50, 'L' ],
- [ 60, 'LX' ],
- [ 70, 'LXX' ],
- [ 80, 'LXXX' ],
- [ 90, 'XC' ],
- [ 100, 'C' ]
+ [ 100, 'C' ],
+ [500, 'D'],
+ [1000, 'M']
 ]);
 
 @Injectable({
@@ -26,7 +20,7 @@ export class RomanNumbersService {
   }
 
   convertNumber(number) {  
-    roman_number = '';    
+    let roman_number = '';    
     switch (true) {
       case number < 4: {
         for (let index = 0; index < number; index++){
@@ -49,22 +43,58 @@ export class RomanNumbersService {
         roman_number = roman_numbers.get(1).concat(roman_numbers.get(10));
         break;
       }
-      case number == 10: {
-        roman_number = roman_numbers.get(10)
+      case (10 <= number && number < 40): {
+        roman_number = roman_numbers.get(10);
+        for (let index = 1; index < Math.floor(number/10); index++) {
+          roman_number = roman_number.concat(roman_numbers.get(10));
+        }
+        roman_number = this.moduleOperation(roman_number, number, 10);
         break;
       }
-      case (10 < number && number < 100): {
-        for (let index = 0; index < Math.floor(number/10); index++) {
-          roman_number = roman_number.concat(roman_numbers.get(10))
+      case (40 <= number && number < 50): {
+        roman_number = roman_numbers.get(10).concat(roman_numbers.get(50));
+        roman_number = this.moduleOperation(roman_number, number, 10);
+        break;
+      }
+      case (50 <= number && number < 90): {
+        roman_number = roman_numbers.get(50);
+        roman_number = this.moduleOperation(roman_number, number, 50);
+        break;
+      }
+      case (90 <= number && number < 100): {
+        roman_number = roman_numbers.get(10).concat(roman_numbers.get(100));
+        roman_number = this.moduleOperation(roman_number, number, 10)
+        break;
+      }
+      case(100 <= number && number < 400): {
+        roman_number = roman_numbers.get(100);
+        let index = 1;
+        while(index < Math.floor(number/100)){
+          roman_number = roman_number.concat(roman_numbers.get(100));
+          index++
         }
-        let aux = roman_number;
-        let result = this.convertNumber(number%10);
-        roman_number = aux;
-        roman_number = roman_number.concat(result);
+        roman_number = this.moduleOperation(roman_number, number, 100);
+        break;
+      }
+      case(400<= number && number < 500):{
+        roman_number = roman_numbers.get(100).concat(roman_numbers.get(500));
+        roman_number = this.moduleOperation(roman_number, number, 400)
+        break;
+      }
+      case(500 <= number && number < 900):{
+        roman_number = roman_numbers.get(500);
+        roman_number = this.moduleOperation(roman_number, number, 500);
+        break;
       }
     }
     return roman_number;
 
+  }
+
+  moduleOperation(roman_number, number, base){
+    module_result = this.convertNumber(number%base);
+    roman_number = roman_number.concat(module_result)
+    return roman_number;
   }
 
 }
