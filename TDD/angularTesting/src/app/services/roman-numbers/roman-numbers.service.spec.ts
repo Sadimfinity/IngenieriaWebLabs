@@ -480,329 +480,394 @@ describe('RomanNumbersService', () => {
     expect(roman_number).toBe('CCCXCIX');
   })
 
-  it('should convert 300 to CCC correctly', () => {
-    roman_number = service.convertNumber(300);
-    expect(roman_number).toBe('CCC');
+  it('should convert 400 to CD correctly', () => {
+    roman_number = service.convertNumber(400);
+    expect(roman_number).toBe('CD');
   })
 
-  it('should convert 301 to CCCI correctly', () => {
-    roman_number = service.convertNumber(301);
-    expect(roman_number).toBe('CCCI');
+  it('should convert 401 to CDI correctly', () => {
+    roman_number = service.convertNumber(401);
+    expect(roman_number).toBe('CDI');
   })
 
-  it('should convert 302 to CII correctly', () => {
-    roman_number = service.convertNumber(302);
-    expect(roman_number).toBe('CCCII');
+  it('should convert 402 to CII correctly', () => {
+    roman_number = service.convertNumber(402);
+    expect(roman_number).toBe('CDII');
   })
 
-  it('should convert 310 to CCCX correctly', () => {
-    roman_number = service.convertNumber(310);
-    expect(roman_number).toBe('CCCX');
+  it('should convert 410 to CDX correctly', () => {
+    roman_number = service.convertNumber(410);
+    expect(roman_number).toBe('CDX');
   })
 
-  it('should convert 320 to CCCX correctly', () => {
-    roman_number = service.convertNumber(320);
-    expect(roman_number).toBe('CCCXX');
+  it('should convert 420 to CDX correctly', () => {
+    roman_number = service.convertNumber(420);
+    expect(roman_number).toBe('CDXX');
   })
 
-  it('should convert 330 to CXXX correctly', () => {
-    roman_number = service.convertNumber(330);
-    expect(roman_number).toBe('CCCXXX');
+  it('should convert 430 to CXXX correctly', () => {
+    roman_number = service.convertNumber(430);
+    expect(roman_number).toBe('CDXXX');
   })
 
-  it('should convert 340 to CCCXL correctly', () => {
-    roman_number = service.convertNumber(340);
-    expect(roman_number).toBe('CCCXL');
+  it('should convert 440 to CDXL correctly', () => {
+    roman_number = service.convertNumber(440);
+    expect(roman_number).toBe('CDXL');
   })
 
-  it('should convert 350 to CCCL correctly', () => {
-    roman_number = service.convertNumber(350);
-    expect(roman_number).toBe('CCCL');
+  it('should convert 450 to CDL correctly', () => {
+    roman_number = service.convertNumber(450);
+    expect(roman_number).toBe('CDL');
   })
 
-  it('should convert 360 to CCCLX correctly', () => {
-    roman_number = service.convertNumber(360);
-    expect(roman_number).toBe('CCCLX');
+  it('should convert 460 to CDLX correctly', () => {
+    roman_number = service.convertNumber(460);
+    expect(roman_number).toBe('CDLX');
   })
 
-  it('should convert 370 to CCCLXX correctly', () => {
-    roman_number = service.convertNumber(370);
-    expect(roman_number).toBe('CCCLXX');
+  it('should convert 470 to CDLXX correctly', () => {
+    roman_number = service.convertNumber(470);
+    expect(roman_number).toBe('CDLXX');
   })
 
-  it('should convert 380 to CCCLXXX correctly', () => {
-    roman_number = service.convertNumber(380);
-    expect(roman_number).toBe('CCCLXXX');
+  it('should convert 480 to CDLXXX correctly', () => {
+    roman_number = service.convertNumber(480);
+    expect(roman_number).toBe('CDLXXX');
   })
 
-  it('should convert 390 to CCCXC correctly', () => {
-    roman_number = service.convertNumber(390);
-    expect(roman_number).toBe('CCCXC');
+  it('should convert 490 to CDXC correctly', () => {
+    roman_number = service.convertNumber(490);
+    expect(roman_number).toBe('CDXC');
   })
 
-  it('should convert 399 to CXCIX correctly', () => {
-    roman_number = service.convertNumber(399);
-    expect(roman_number).toBe('CCCXCIX');
+  it('should convert 499 to CXCIX correctly', () => {
+    roman_number = service.convertNumber(499);
+    expect(roman_number).toBe('CDXCIX');
   })
 
-  it('should convert 300 to CCC correctly', () => {
-    roman_number = service.convertNumber(300);
-    expect(roman_number).toBe('CCC');
+  it('should convert 500 to D correctly', () => {
+    roman_number = service.convertNumber(500);
+    expect(roman_number).toBe('D');
   })
 
-  it('should convert 301 to CCCI correctly', () => {
-    roman_number = service.convertNumber(301);
-    expect(roman_number).toBe('CCCI');
+  it('should convert 501 to DI correctly', () => {
+    roman_number = service.convertNumber(501);
+    expect(roman_number).toBe('DI');
   })
 
-  it('should convert 302 to CII correctly', () => {
-    roman_number = service.convertNumber(302);
-    expect(roman_number).toBe('CCCII');
+  it('should convert 502 to CII correctly', () => {
+    roman_number = service.convertNumber(502);
+    expect(roman_number).toBe('DII');
   })
 
-  it('should convert 310 to CCCX correctly', () => {
-    roman_number = service.convertNumber(310);
-    expect(roman_number).toBe('CCCX');
+  it('should convert 510 to DX correctly', () => {
+    roman_number = service.convertNumber(510);
+    expect(roman_number).toBe('DX');
   })
 
-  it('should convert 320 to CCCX correctly', () => {
-    roman_number = service.convertNumber(320);
-    expect(roman_number).toBe('CCCXX');
+  it('should convert 520 to DX correctly', () => {
+    roman_number = service.convertNumber(520);
+    expect(roman_number).toBe('DXX');
   })
 
-  it('should convert 330 to CXXX correctly', () => {
-    roman_number = service.convertNumber(330);
-    expect(roman_number).toBe('CCCXXX');
+  it('should convert 530 to CXXX correctly', () => {
+    roman_number = service.convertNumber(530);
+    expect(roman_number).toBe('DXXX');
   })
 
-  it('should convert 340 to CCCXL correctly', () => {
-    roman_number = service.convertNumber(340);
-    expect(roman_number).toBe('CCCXL');
+  it('should convert 540 to DXL correctly', () => {
+    roman_number = service.convertNumber(540);
+    expect(roman_number).toBe('DXL');
   })
 
-  it('should convert 350 to CCCL correctly', () => {
-    roman_number = service.convertNumber(350);
-    expect(roman_number).toBe('CCCL');
+  it('should convert 550 to DL correctly', () => {
+    roman_number = service.convertNumber(550);
+    expect(roman_number).toBe('DL');
   })
 
-  it('should convert 360 to CCCLX correctly', () => {
-    roman_number = service.convertNumber(360);
-    expect(roman_number).toBe('CCCLX');
+  it('should convert 560 to DLX correctly', () => {
+    roman_number = service.convertNumber(560);
+    expect(roman_number).toBe('DLX');
   })
 
-  it('should convert 370 to CCCLXX correctly', () => {
-    roman_number = service.convertNumber(370);
-    expect(roman_number).toBe('CCCLXX');
+  it('should convert 570 to DLXX correctly', () => {
+    roman_number = service.convertNumber(570);
+    expect(roman_number).toBe('DLXX');
   })
 
-  it('should convert 380 to CCCLXXX correctly', () => {
-    roman_number = service.convertNumber(380);
-    expect(roman_number).toBe('CCCLXXX');
+  it('should convert 580 to DLXXX correctly', () => {
+    roman_number = service.convertNumber(580);
+    expect(roman_number).toBe('DLXXX');
   })
 
-  it('should convert 390 to CCCXC correctly', () => {
-    roman_number = service.convertNumber(390);
-    expect(roman_number).toBe('CCCXC');
+  it('should convert 590 to DXC correctly', () => {
+    roman_number = service.convertNumber(590);
+    expect(roman_number).toBe('DXC');
   })
 
-  it('should convert 399 to CXCIX correctly', () => {
-    roman_number = service.convertNumber(399);
-    expect(roman_number).toBe('CCCXCIX');
+  it('should convert 599 to DXCIX correctly', () => {
+    roman_number = service.convertNumber(599);
+    expect(roman_number).toBe('DXCIX');
   })
 
-  it('should convert 300 to CCC correctly', () => {
-    roman_number = service.convertNumber(300);
-    expect(roman_number).toBe('CCC');
+  it('should convert 600 to DC correctly', () => {
+    roman_number = service.convertNumber(600);
+    expect(roman_number).toBe('DC');
   })
 
-  it('should convert 301 to CCCI correctly', () => {
-    roman_number = service.convertNumber(301);
-    expect(roman_number).toBe('CCCI');
+  it('should convert 601 to DCI correctly', () => {
+    roman_number = service.convertNumber(601);
+    expect(roman_number).toBe('DCI');
   })
 
-  it('should convert 302 to CII correctly', () => {
-    roman_number = service.convertNumber(302);
-    expect(roman_number).toBe('CCCII');
+  it('should convert 602 to CII correctly', () => {
+    roman_number = service.convertNumber(602);
+    expect(roman_number).toBe('DCII');
   })
 
-  it('should convert 310 to CCCX correctly', () => {
-    roman_number = service.convertNumber(310);
-    expect(roman_number).toBe('CCCX');
+  it('should convert 610 to DCX correctly', () => {
+    roman_number = service.convertNumber(610);
+    expect(roman_number).toBe('DCX');
   })
 
-  it('should convert 320 to CCCX correctly', () => {
-    roman_number = service.convertNumber(320);
-    expect(roman_number).toBe('CCCXX');
+  it('should convert 620 to DCX correctly', () => {
+    roman_number = service.convertNumber(620);
+    expect(roman_number).toBe('DCXX');
   })
 
-  it('should convert 330 to CXXX correctly', () => {
-    roman_number = service.convertNumber(330);
-    expect(roman_number).toBe('CCCXXX');
+  it('should convert 630 to CXXX correctly', () => {
+    roman_number = service.convertNumber(630);
+    expect(roman_number).toBe('DCXXX');
   })
 
-  it('should convert 340 to CCCXL correctly', () => {
-    roman_number = service.convertNumber(340);
-    expect(roman_number).toBe('CCCXL');
+  it('should convert 640 to DCXL correctly', () => {
+    roman_number = service.convertNumber(640);
+    expect(roman_number).toBe('DCXL');
   })
 
-  it('should convert 350 to CCCL correctly', () => {
-    roman_number = service.convertNumber(350);
-    expect(roman_number).toBe('CCCL');
+  it('should convert 650 to DCL correctly', () => {
+    roman_number = service.convertNumber(650);
+    expect(roman_number).toBe('DCL');
   })
 
-  it('should convert 360 to CCCLX correctly', () => {
-    roman_number = service.convertNumber(360);
-    expect(roman_number).toBe('CCCLX');
+  it('should convert 660 to DCLX correctly', () => {
+    roman_number = service.convertNumber(660);
+    expect(roman_number).toBe('DCLX');
   })
 
-  it('should convert 370 to CCCLXX correctly', () => {
-    roman_number = service.convertNumber(370);
-    expect(roman_number).toBe('CCCLXX');
+  it('should convert 670 to DCLXX correctly', () => {
+    roman_number = service.convertNumber(670);
+    expect(roman_number).toBe('DCLXX');
   })
 
-  it('should convert 380 to CCCLXXX correctly', () => {
-    roman_number = service.convertNumber(380);
-    expect(roman_number).toBe('CCCLXXX');
+  it('should convert 680 to DCLXXX correctly', () => {
+    roman_number = service.convertNumber(680);
+    expect(roman_number).toBe('DCLXXX');
   })
 
-  it('should convert 390 to CCCXC correctly', () => {
-    roman_number = service.convertNumber(390);
-    expect(roman_number).toBe('CCCXC');
+  it('should convert 690 to DCXC correctly', () => {
+    roman_number = service.convertNumber(690);
+    expect(roman_number).toBe('DCXC');
   })
 
-  it('should convert 399 to CXCIX correctly', () => {
-    roman_number = service.convertNumber(399);
-    expect(roman_number).toBe('CCCXCIX');
+  it('should convert 699 to DCXCIX correctly', () => {
+    roman_number = service.convertNumber(699);
+    expect(roman_number).toBe('DCXCIX');
   })
 
-  it('should convert 300 to CCC correctly', () => {
-    roman_number = service.convertNumber(300);
-    expect(roman_number).toBe('CCC');
+  it('should convert 700 to DCC correctly', () => {
+    roman_number = service.convertNumber(700);
+    expect(roman_number).toBe('DCC');
   })
 
-  it('should convert 301 to CCCI correctly', () => {
-    roman_number = service.convertNumber(301);
-    expect(roman_number).toBe('CCCI');
+  it('should convert 701 to DCCI correctly', () => {
+    roman_number = service.convertNumber(701);
+    expect(roman_number).toBe('DCCI');
   })
 
-  it('should convert 302 to CII correctly', () => {
-    roman_number = service.convertNumber(302);
-    expect(roman_number).toBe('CCCII');
+  it('should convert 702 to CII correctly', () => {
+    roman_number = service.convertNumber(702);
+    expect(roman_number).toBe('DCCII');
   })
 
-  it('should convert 310 to CCCX correctly', () => {
-    roman_number = service.convertNumber(310);
-    expect(roman_number).toBe('CCCX');
+  it('should convert 710 to DCCX correctly', () => {
+    roman_number = service.convertNumber(710);
+    expect(roman_number).toBe('DCCX');
   })
 
-  it('should convert 320 to CCCX correctly', () => {
-    roman_number = service.convertNumber(320);
-    expect(roman_number).toBe('CCCXX');
+  it('should convert 720 to DCCX correctly', () => {
+    roman_number = service.convertNumber(720);
+    expect(roman_number).toBe('DCCXX');
   })
 
-  it('should convert 330 to CXXX correctly', () => {
-    roman_number = service.convertNumber(330);
-    expect(roman_number).toBe('CCCXXX');
+  it('should convert 730 to CXXX correctly', () => {
+    roman_number = service.convertNumber(730);
+    expect(roman_number).toBe('DCCXXX');
   })
 
-  it('should convert 340 to CCCXL correctly', () => {
-    roman_number = service.convertNumber(340);
-    expect(roman_number).toBe('CCCXL');
+  it('should convert 740 to DCCXL correctly', () => {
+    roman_number = service.convertNumber(740);
+    expect(roman_number).toBe('DCCXL');
   })
 
-  it('should convert 350 to CCCL correctly', () => {
-    roman_number = service.convertNumber(350);
-    expect(roman_number).toBe('CCCL');
+  it('should convert 750 to DCCL correctly', () => {
+    roman_number = service.convertNumber(750);
+    expect(roman_number).toBe('DCCL');
   })
 
-  it('should convert 360 to CCCLX correctly', () => {
-    roman_number = service.convertNumber(360);
-    expect(roman_number).toBe('CCCLX');
+  it('should convert 760 to DCCLX correctly', () => {
+    roman_number = service.convertNumber(760);
+    expect(roman_number).toBe('DCCLX');
   })
 
-  it('should convert 370 to CCCLXX correctly', () => {
-    roman_number = service.convertNumber(370);
-    expect(roman_number).toBe('CCCLXX');
+  it('should convert 770 to DCCLXX correctly', () => {
+    roman_number = service.convertNumber(770);
+    expect(roman_number).toBe('DCCLXX');
   })
 
-  it('should convert 380 to CCCLXXX correctly', () => {
-    roman_number = service.convertNumber(380);
-    expect(roman_number).toBe('CCCLXXX');
+  it('should convert 780 to DCCLXXX correctly', () => {
+    roman_number = service.convertNumber(780);
+    expect(roman_number).toBe('DCCLXXX');
   })
 
-  it('should convert 390 to CCCXC correctly', () => {
-    roman_number = service.convertNumber(390);
-    expect(roman_number).toBe('CCCXC');
+  it('should convert 790 to DCCXC correctly', () => {
+    roman_number = service.convertNumber(790);
+    expect(roman_number).toBe('DCCXC');
   })
 
-  it('should convert 399 to CXCIX correctly', () => {
-    roman_number = service.convertNumber(399);
-    expect(roman_number).toBe('CCCXCIX');
+  it('should convert 799 to DCCXCIX correctly', () => {
+    roman_number = service.convertNumber(799);
+    expect(roman_number).toBe('DCCXCIX');
   })
 
-  it('should convert 300 to CCC correctly', () => {
-    roman_number = service.convertNumber(300);
-    expect(roman_number).toBe('CCC');
+  it('should convert 800 to DCCC correctly', () => {
+    roman_number = service.convertNumber(800);
+    expect(roman_number).toBe('DCCC');
   })
 
-  it('should convert 301 to CCCI correctly', () => {
-    roman_number = service.convertNumber(301);
-    expect(roman_number).toBe('CCCI');
+  it('should convert 801 to DCCCI correctly', () => {
+    roman_number = service.convertNumber(801);
+    expect(roman_number).toBe('DCCCI');
   })
 
-  it('should convert 302 to CII correctly', () => {
-    roman_number = service.convertNumber(302);
-    expect(roman_number).toBe('CCCII');
+  it('should convert 802 to CII correctly', () => {
+    roman_number = service.convertNumber(802);
+    expect(roman_number).toBe('DCCCII');
   })
 
-  it('should convert 310 to CCCX correctly', () => {
-    roman_number = service.convertNumber(310);
-    expect(roman_number).toBe('CCCX');
+  it('should convert 810 to DCCCX correctly', () => {
+    roman_number = service.convertNumber(810);
+    expect(roman_number).toBe('DCCCX');
   })
 
-  it('should convert 320 to CCCX correctly', () => {
-    roman_number = service.convertNumber(320);
-    expect(roman_number).toBe('CCCXX');
+  it('should convert 820 to DCCCX correctly', () => {
+    roman_number = service.convertNumber(820);
+    expect(roman_number).toBe('DCCCXX');
   })
 
-  it('should convert 330 to CXXX correctly', () => {
-    roman_number = service.convertNumber(330);
-    expect(roman_number).toBe('CCCXXX');
+  it('should convert 830 to CXXX correctly', () => {
+    roman_number = service.convertNumber(830);
+    expect(roman_number).toBe('DCCCXXX');
   })
 
-  it('should convert 340 to CCCXL correctly', () => {
-    roman_number = service.convertNumber(340);
-    expect(roman_number).toBe('CCCXL');
+  it('should convert 840 to DCCCXL correctly', () => {
+    roman_number = service.convertNumber(840);
+    expect(roman_number).toBe('DCCCXL');
   })
 
-  it('should convert 350 to CCCL correctly', () => {
-    roman_number = service.convertNumber(350);
-    expect(roman_number).toBe('CCCL');
+  it('should convert 850 to DCCCL correctly', () => {
+    roman_number = service.convertNumber(850);
+    expect(roman_number).toBe('DCCCL');
   })
 
-  it('should convert 360 to CCCLX correctly', () => {
-    roman_number = service.convertNumber(360);
-    expect(roman_number).toBe('CCCLX');
+  it('should convert 860 to DCCCLX correctly', () => {
+    roman_number = service.convertNumber(860);
+    expect(roman_number).toBe('DCCCLX');
   })
 
-  it('should convert 370 to CCCLXX correctly', () => {
-    roman_number = service.convertNumber(370);
-    expect(roman_number).toBe('CCCLXX');
+  it('should convert 870 to DCCCLXX correctly', () => {
+    roman_number = service.convertNumber(870);
+    expect(roman_number).toBe('DCCCLXX');
   })
 
-  it('should convert 380 to CCCLXXX correctly', () => {
-    roman_number = service.convertNumber(380);
-    expect(roman_number).toBe('CCCLXXX');
+  it('should convert 880 to DCCCLXXX correctly', () => {
+    roman_number = service.convertNumber(880);
+    expect(roman_number).toBe('DCCCLXXX');
   })
 
-  it('should convert 390 to CCCXC correctly', () => {
-    roman_number = service.convertNumber(390);
-    expect(roman_number).toBe('CCCXC');
+  it('should convert 890 to DCCCXC correctly', () => {
+    roman_number = service.convertNumber(890);
+    expect(roman_number).toBe('DCCCXC');
   })
 
-  it('should convert 399 to CXCIX correctly', () => {
-    roman_number = service.convertNumber(399);
-    expect(roman_number).toBe('CCCXCIX');
+  it('should convert 899 to DCCCXCIX correctly', () => {
+    roman_number = service.convertNumber(899);
+    expect(roman_number).toBe('DCCCXCIX');
+  })
+
+  it('should convert 900 to CM correctly', () => {
+    roman_number = service.convertNumber(900);
+    expect(roman_number).toBe('CM');
+  })
+
+  it('should convert 901 to CMI correctly', () => {
+    roman_number = service.convertNumber(901);
+    expect(roman_number).toBe('CMI');
+  })
+
+  it('should convert 902 to CII correctly', () => {
+    roman_number = service.convertNumber(902);
+    expect(roman_number).toBe('CMII');
+  })
+
+  it('should convert 910 to CMX correctly', () => {
+    roman_number = service.convertNumber(910);
+    expect(roman_number).toBe('CMX');
+  })
+
+  it('should convert 920 to CMX correctly', () => {
+    roman_number = service.convertNumber(920);
+    expect(roman_number).toBe('CMXX');
+  })
+
+  it('should convert 930 to CXXX correctly', () => {
+    roman_number = service.convertNumber(930);
+    expect(roman_number).toBe('CMXXX');
+  })
+
+  it('should convert 940 to CMXL correctly', () => {
+    roman_number = service.convertNumber(940);
+    expect(roman_number).toBe('CMXL');
+  })
+
+  it('should convert 950 to CML correctly', () => {
+    roman_number = service.convertNumber(950);
+    expect(roman_number).toBe('CML');
+  })
+
+  it('should convert 960 to CMLX correctly', () => {
+    roman_number = service.convertNumber(960);
+    expect(roman_number).toBe('CMLX');
+  })
+
+  it('should convert 970 to CMLXX correctly', () => {
+    roman_number = service.convertNumber(970);
+    expect(roman_number).toBe('CMLXX');
+  })
+
+  it('should convert 980 to CMLXXX correctly', () => {
+    roman_number = service.convertNumber(980);
+    expect(roman_number).toBe('CMLXXX');
+  })
+
+  it('should convert 990 to CMXC correctly', () => {
+    roman_number = service.convertNumber(990);
+    expect(roman_number).toBe('CMXC');
+  })
+
+  it('should convert 999 to CMXCIX correctly', () => {
+    roman_number = service.convertNumber(999);
+    expect(roman_number).toBe('CMXCIX');
   })
 
 });

@@ -6,8 +6,8 @@ let roman_numbers = new Map([
  [ 10, 'X' ],
  [ 50, 'L' ],
  [ 100, 'C' ],
- [500, 'D'],
- [1000, 'M']
+ [ 500, 'D' ],
+ [ 1000, 'M' ]
 ]);
 
 @Injectable({
@@ -78,7 +78,7 @@ export class RomanNumbersService {
       }
       case(400<= number && number < 500):{
         roman_number = roman_numbers.get(100).concat(roman_numbers.get(500));
-        roman_number = this.moduleOperation(roman_number, number, 400)
+        roman_number = this.moduleOperation(roman_number, number, 100)
         break;
       }
       case(500 <= number && number < 900):{
@@ -86,6 +86,13 @@ export class RomanNumbersService {
         roman_number = this.moduleOperation(roman_number, number, 500);
         break;
       }
+      case (900 <= number && number < 1000): {
+        roman_number = roman_numbers.get(100).concat(roman_numbers.get(1000));
+        roman_number = this.moduleOperation(roman_number, number, 100);
+        break;
+      }
+      case number == 1000:
+        roman_number = roman_numbers.get(1000);
     }
     return roman_number;
 
