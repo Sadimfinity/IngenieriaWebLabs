@@ -14,5 +14,5 @@ export class AppComponent {
     const service = new RomanNumbersService();
     this.value = service.convertNumber(Number(this.value))
   }
-  title = 'angularTesting';
+  title = 'Números Romanos';
 }
